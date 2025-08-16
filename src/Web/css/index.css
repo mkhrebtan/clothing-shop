@@ -31,6 +31,7 @@ header {
 
 #sex .bars {
     margin: 0 8px 0 17px;
+    cursor: pointer;
 }
 
 #menu {
@@ -130,6 +131,7 @@ top: 21px;
 z-index: 2;
 padding: 20px 21px 20px 21px;
 box-sizing: border-box;
+visibility: hidden;
 }
 
 #line-bag-con{
@@ -149,7 +151,6 @@ top: 7.7%;
 }
 
 #section-bag1{
-    background-color: blue;
     width: 372px;
 height: 132px;
 position: absolute;
@@ -162,3 +163,173 @@ padding-bottom: 5px;
 gap: 10px;
 }
 
+
+
+.edit-icon{
+    position: absolute;
+    display: flex;
+    right: 3px;
+    top: 5px;
+    cursor: pointer;
+}
+
+.favorite-icon{
+    position: absolute;
+    display: flex;
+    right: 3px;
+    top: 55px;
+    cursor: pointer;
+}
+
+.trash-icon{
+    position: absolute;
+    display: flex;
+    right: 3px;
+    top: 105px;
+    cursor: pointer;
+}
+
+.size-num-bag{
+    background-color:transparent;
+    width: 213px;
+height: 25px;
+position: absolute;
+    display: flex;
+    top: 100px;
+    left: 55px;
+}
+
+
+.num-inbag pre{
+    position: absolute;
+    white-space: nowrap;
+    left: 120px;
+    font-family: var(--font-family);
+font-weight: 400;
+font-size: 15px;
+color: #464646;
+}
+
+
+
+.num-inbag{
+    background:transparent;
+    border: 1px solid #000;
+border-radius: 10px;
+width: 89px;
+height: 25px;
+align-items: center;
+justify-content: center;
+position: absolute;
+display: flex;
+gap: 16px;
+}
+
+.num-inbag svg{
+    cursor: pointer;
+}
+
+
+#section-bag2{
+    width: 372px;
+    height: 132px;
+    position: absolute;
+    display: flex;
+    left: 21px;
+    top: 194px; 
+    box-sizing: border-box;
+    padding-top:5px;
+    padding-bottom: 5px;
+    gap: 10px;
+    margin-top: 28px;
+}
+
+#bag-text2{
+    display: block;
+}
+
+#bag-text2 span{
+    color: #AF3232;
+}
+
+.edit-icon2{
+    position: absolute;
+    display: flex;
+    right: 3px;
+    top: 5px;
+    cursor: pointer;
+}
+
+.favorite-icon2{
+    position: absolute;
+    display: flex;
+    right: 3px;
+    top: 55px;
+    cursor: pointer;
+}
+
+.trash-icon2{
+    position: absolute;
+    display: flex;
+    right: 3px;
+    top: 105px;
+    cursor: pointer;
+}
+
+.size-num-bag2{
+    background-color:transparent;
+    width: 213px;
+    height: 25px;
+    position: absolute;
+    display: flex;
+    top: 100px;
+    left: 55px;
+}
+
+.num-inbag2 pre.text-size-bag2{
+    position: absolute;
+    white-space: nowrap;
+    left: 120px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 15px;
+    color: #464646;
+}
+
+.num-inbag2{
+    background:transparent;
+    border: 1px solid #000;
+    border-radius: 10px;
+    width: 89px;
+    height: 25px;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    display: flex;
+    gap: 16px;
+}
+
+.num-inbag2 svg{
+    cursor: pointer;
+}
+
+#footer-bag button{
+    border: 1px solid #2c2c2c;
+border-radius: 8px;
+padding: 12px;
+width: 383px;
+height: 44px;
+position: absolute;
+top: 600px;
+right: 21px;
+background: #2c2c2c;
+color: #f5f5f5;
+cursor: pointer;
+}
+
+#footer-bag span{
+    position: absolute;
+    bottom: 78px;
+    left: 21px;
+    font-size: 20px;
+} 
