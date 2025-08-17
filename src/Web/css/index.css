@@ -29,6 +29,11 @@ header {
     align-items: center;
 }
 
+#button-bars{
+    background-color: transparent;
+    border: none;
+}
+
 #sex .bars {
     margin: 0 8px 0 17px;
     cursor: pointer;
@@ -95,12 +100,19 @@ font-size: 15px;
     z-index: 2;
     cursor: pointer;
   }  
+
   
   
   
   .bag-shopping {
         position: relative;    
         flex-shrink: 0;       
+    }
+
+    #search button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
     }
 
 #num-goods{
@@ -131,7 +143,7 @@ top: 21px;
 z-index: 2;
 padding: 20px 21px 20px 21px;
 box-sizing: border-box;
-visibility: hidden;
+
 }
 
 #line-bag-con{
@@ -161,6 +173,25 @@ box-sizing: border-box;
 padding-top:5px;
 padding-bottom: 5px;
 gap: 10px;
+}
+
+#section-bag1 button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#section-bag2 button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#xmark-button{
+    position: absolute;
+    right: -5px;
+    top: 16px;
+    cursor: pointer;
 }
 
 
