@@ -33,7 +33,7 @@
           </span>
           <input type="text" placeholder="Пошук">
 
-            <button><svg class="bag-shopping" width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <button class="bag-shopping"><svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M14 9.625C14 7.69453 15.5695 6.125 17.5 6.125C19.4305 6.125 21 7.69453 21 9.625V12.25H14V9.625ZM11.375 12.25H7.875C6.42578 12.25 5.25 13.4258 5.25 14.875V26.25C5.25 29.1484 7.60156 31.5 10.5 31.5H24.5C27.3984 31.5 29.75 29.1484 29.75 26.25V14.875C29.75 13.4258 28.5742 12.25 27.125 12.25H23.625V9.625C23.625 6.23984 20.8852 3.5 17.5 3.5C14.1148 3.5 11.375 6.23984 11.375 9.625V12.25ZM12.6875 14.875C13.4148 14.875 14 15.4602 14 16.1875C14 16.9148 13.4148 17.5 12.6875 17.5C11.9602 17.5 11.375 16.9148 11.375 16.1875C11.375 15.4602 11.9602 14.875 12.6875 14.875ZM21 16.1875C21 15.4602 21.5852 14.875 22.3125 14.875C23.0398 14.875 23.625 15.4602 23.625 16.1875C23.625 16.9148 23.0398 17.5 22.3125 17.5C21.5852 17.5 21 16.9148 21 16.1875Z" fill="black" />
               </svg></button>
 
@@ -77,11 +77,11 @@
 
             <div class="size-num-bag">
               <div class="num-inbag">
-                <button><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <button class="minus-button"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M4.16675 10H15.8334" stroke="#2C2C2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
               </svg></button>
-              <span>1</span>
-              <button><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <span class="quantity">1</span>
+              <button class="plus-button"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10.0001 4.16669V15.8334M4.16675 10H15.8334" stroke="#2C2C2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
               </svg></button>
               <pre class="text-size-bag">S&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Чорний</pre>
@@ -115,11 +115,11 @@
           
             <div class="size-num-bag2">
               <div class="num-inbag2">
-                <button><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <button class="minus-button"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M4.16675 10H15.8334" stroke="#2C2C2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg></button>
-                <span>1</span>
-                <button><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <span class="quantity">1</span>
+                <button class="plus-button"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M10.0001 4.16669V15.8334M4.16675 10H15.8334" stroke="#2C2C2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg></button>
                 <pre class="text-size-bag2">S&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Чорний</pre>
@@ -186,6 +186,8 @@
             </ul>
           </div>
         </div>
+
+        <script src="js/app.js"></script>
       </header>
       
 </body>
