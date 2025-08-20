@@ -60,3 +60,49 @@ minus_button2.addEventListener("click", function(){
         quantity2.innerText = currentQuantity2 - 1;
     }
 });
+
+const women_button = document.getElementById("women-button");
+const men_button = document.getElementById("men-button");
+const women_button_active = document.getElementById("women-button-active");
+const men_button_active = document.getElementById("men-button-active");
+
+women_button.addEventListener("click", function() {
+    women_button.style.backgroundColor = "#2C2C2C";
+    women_button.style.color = "#f5f5f5";
+    women_button.style.borderRadius = "8px";
+    men_button.style.backgroundColor = "rgba(255, 255, 255, 0)";
+    men_button.style.color = "#2C2C2C";
+    men_button.style.border = "none";
+
+});
+
+women_button_active.addEventListener("click", function() {
+    women_button_active.style.backgroundColor = "#2C2C2C";
+    women_button_active.style.color = "#f5f5f5";
+    women_button_active.style.borderRadius = "8px";
+    men_button_active.style.backgroundColor = "rgba(255, 255, 255, 0)";
+    men_button_active.style.color = "#2C2C2C";
+    men_button_active.style.border = "none";
+
+});
+
+
+men_button.addEventListener("click", function() {
+    men_button.style.backgroundColor = "#2C2C2C";
+    men_button.style.color = "#f5f5f5";
+    men_button.style.borderRadius = "8px";
+    women_button.style.backgroundColor = "rgba(255, 255, 255, 0)";
+    women_button.style.color = "#2C2C2C";
+    women_button.style.border = "none";
+
+});
+
+men_button_active.addEventListener("click", function() {
+    men_button_active.style.backgroundColor = "#2C2C2C";
+    men_button_active.style.color = "#f5f5f5";
+    men_button_active.style.borderRadius = "8px";
+    women_button_active.style.backgroundColor = "rgba(255, 255, 255, 0)";
+    women_button_active.style.color = "#2C2C2C";
+    women_button_active.style.border = "none";
+
+});
