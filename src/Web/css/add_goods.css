@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #E1DFCB;
+    font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+label{
+    display: block;
+    margin-bottom: 8px;
+    font-family: var(--font-family);
+font-weight: 600;
+font-size: 24px;
+line-height: 120%;
+letter-spacing: -0.02em;
+color: #1e1e1e;
+}
+
+input{
+    width: 90%;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 100%;
+    padding: 16px;
+    border: none;
+    margin-bottom: 20px;
+}
+
+textarea{
+    width: 90%;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 100%;
+    padding: 16px;
+    border: none;
+    margin-bottom: 20px;
+}
+
+#product-chars{
+    width: 52%;
+    height: 95%;
+    background-color: yellow;
+    position: absolute;
+    left: 47%;
+    top: 2%;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 77px;
+    padding-top: 46px;
+    box-sizing: border-box;
+}
