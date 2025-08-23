@@ -23,6 +23,77 @@
 
     <label>Опис</label>
     <textarea rows="6" cols="50" placeholder="Value"></textarea>
+
+    
+    <input id="instok" type="checkbox">
+    <label for="instok" id="label-checkbox">Завжди в наявності</label> 
+    <label>Кольори</label>
+    <div id="colors"><svg width="47" height="44" viewBox="0 0 47 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M23.5 0.5C36.2341 0.5 46.5 10.1564 46.5 22C46.5 33.8436 36.2341 43.5 23.5 43.5C10.7659 43.5 0.5 33.8436 0.5 22C0.5 10.1564 10.7659 0.5 23.5 0.5Z" fill="black" stroke="black" />
+      </svg>
+
+      <svg width="47" height="44" viewBox="0 0 47 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M23.5 0.5C36.2341 0.5 46.5 10.1564 46.5 22C46.5 33.8436 36.2341 43.5 23.5 43.5C10.7659 43.5 0.5 33.8436 0.5 22C0.5 10.1564 10.7659 0.5 23.5 0.5Z" fill="white" stroke="black" />
+      </svg>
+
+      <svg width="47" height="44" viewBox="0 0 47 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M23.5 0.5C36.2341 0.5 46.5 10.1564 46.5 22C46.5 33.8436 36.2341 43.5 23.5 43.5C10.7659 43.5 0.5 33.8436 0.5 22C0.5 10.1564 10.7659 0.5 23.5 0.5Z" fill="#6DBD53" stroke="black" />
+      </svg>
+
+      <svg width="45" height="45" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16.5 6.875V26.125M6.875 16.5H26.125" stroke="#1E1E1E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </div>
+
+    <label>Ціна</label>
+    <input id="price-input" type="text" placeholder="Value">
+
+    <div id="size-select">
+    <label>Розмірність</label>
+    <select>
+        <option>Код</option>
+        <option>Число</option>
+    </select></div>
+
+    <div id="size-button">
+        <button>XS</button>
+        <button>S</button>
+        <button>M</button>
+        <button>L</button>
+        <button>XL</button>
+        <button>XXL</button>
+        <button>XXXL</button>
+    </div>
 </div>
+
+<div id="product-img">
+  <div id="big-img"></div>
+
+  <button id="arrow-right"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10 24H38M38 24L24 10M38 24L24 38" stroke="#1E1E1E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  </svg></button>
+
+  <button id="arrow-left"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M38 24H10M10 24L24 38M10 24L24 10" stroke="#1E1E1E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  </svg></button>
+
+  <div id="small-imgs">
+    <div id="small-img1"></div>
+    <div id="small-img2"></div>
+    <div id="small-img3"></div>
+    <button id="plus-img"><svg width="44" height="44" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16.5 6.875V26.125M6.875 16.5H26.125" stroke="#1E1E1E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+    </svg></button>
+  </div>
+
+  <div id="button-block"> 
+  <button id="preview-button">Preview</button>
+  <button id="create-button">Створити</button>
+  <input id="listing" type="checkbox">
+    <label for="listing" id="label-checkbox-listing">Одразу до лістингу</label>  
+</div> 
+</div>
+
+
 </body>
 </html>

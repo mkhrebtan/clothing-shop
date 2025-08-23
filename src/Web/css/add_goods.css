@@ -22,8 +22,28 @@ letter-spacing: -0.02em;
 color: #1e1e1e;
 }
 
+#label-checkbox{
+    font-family: var(--font-family);
+font-weight: 400;
+font-size: 20px;
+line-height: 120%;
+color: #1e1e1e;
+}
+
+
+
 input{
     width: 90%;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 100%;
+    padding: 16px;
+    border: none;
+    margin-bottom: 20px;
+}
+
+#price-input{
+    width: 40%;
     font-weight: 200;
     font-size: 16px;
     line-height: 100%;
@@ -45,7 +65,7 @@ textarea{
 #product-chars{
     width: 52%;
     height: 95%;
-    background-color: yellow;
+    background-color: white;
     position: absolute;
     left: 47%;
     top: 2%;
@@ -55,3 +75,181 @@ textarea{
     padding-top: 46px;
     box-sizing: border-box;
 }
+
+#colors{
+    display: flex;
+    gap: 16px;
+    margin-bottom: 25px;
+}
+
+#colors label{
+    margin-bottom: 20px;
+}
+
+#size-select{
+    position: absolute;
+    left: 70%;
+    top: 74%;
+}
+
+#size-select select{
+    width: 190%;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 100%;
+    padding: 16px;
+    border: none;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+#size-button{
+    display: flex;
+    gap: 1.2%;
+    
+}
+
+#size-button button{
+    width: 14%;
+    height: 52px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+#label-checkbox{
+    position: absolute;
+    top: 65.5%;
+    right: 10%;
+}
+
+#instok{
+    position: absolute;
+    top: 66%;
+    left: 69%;
+    
+width: 16px;
+height: 16px;
+accent-color: #2c2c2c;
+}
+
+#product-img{
+    background-color: white;
+    width: 48%;
+    height: 95%;
+    position: absolute;
+    box-sizing: border-box;
+    top: 2%;
+    left: 1%;
+}
+
+#big-img{
+    width: 40%;
+    height: 60%;
+    position: absolute;
+    box-sizing: border-box;
+    top: 4%;
+    left: 30%;
+}
+
+#product-img button{
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+#arrow-right{
+    position: absolute;
+    top: 33%;
+    left: 70%;
+}
+
+#arrow-left{
+    position: absolute;
+    top: 33%;
+    right: 70%;
+}
+
+
+#small-img1{
+    width: 6%;
+    height: 9%;
+    position: absolute;
+    box-sizing: border-box;
+    gap: 18px;
+    top: 66%;
+    left: 38%;
+    margin-right: 18px;
+}
+
+
+
+#small-img2{
+    width: 6%;
+    height: 9%;
+    position: absolute;
+    box-sizing: border-box;
+    gap: 18px;
+    top: 66%;
+    left: 46%;
+}
+
+#small-img3{
+    width: 6%;
+    height: 9%;
+    position: absolute;
+    box-sizing: border-box;
+    gap: 18px;
+    top: 66%;
+    left: 54%;
+} 
+
+#plus-img{
+    position: absolute;
+    top: 68%;
+    left: 62%;
+}
+
+#button-block button{
+    background: black;
+    border: 1px solid #2c2c2c;
+border-radius: 8px;
+padding: 12px;
+width: 180px;
+height: 52px;
+color: white;
+font-size: 20px;
+}
+
+#preview-button{
+    position: absolute;
+    top: 86%;
+    left: 26%;
+}
+
+#create-button{
+    position: absolute;
+    top: 86%;
+    left: 55%;
+}
+
+#listing{
+    position: absolute;
+    top: 93.4%;
+    left: 55.5%;
+width: 16px;
+height: 16px;
+accent-color: #2c2c2c;
+}
+
+#label-checkbox-listing{
+    font-family: var(--font-family);
+font-weight: 400;
+font-size: 16px;
+line-height: 140%;
+color: #1e1e1e;
+    position: absolute;
+    top: 93%;
+    right: 26%;
+}
+
