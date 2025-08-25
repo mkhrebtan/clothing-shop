@@ -106,8 +106,19 @@ textarea{
 #size-button{
     display: flex;
     gap: 1.2%;
-    
 }
+
+
+
+#size-button svg{
+    margin-top: 13px;
+    z-index: 2;
+    position: relative;
+    right: 100px;
+    visibility: hidden;
+}
+
+
 
 #size-button button{
     width: 14%;
@@ -115,6 +126,8 @@ textarea{
     font-size: 20px;
     border: none;
     cursor: pointer;
+    background-color: white;
+    color: black;
 }
 
 #label-checkbox{
@@ -252,4 +265,6 @@ color: #1e1e1e;
     top: 93%;
     right: 26%;
 }
+
+
 
