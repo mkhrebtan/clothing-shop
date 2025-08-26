@@ -131,3 +131,71 @@ xxxl_button.addEventListener("click", function () {
     }
     activexxxl = !activexxxl;
 });
+
+
+const plusBtn = document.getElementById("plus-img");
+const fileInput = document.getElementById("file-input");
+
+const smallImgs = [
+  document.getElementById("small-img1"),
+  document.getElementById("small-img2"),
+  document.getElementById("small-img3"),
+];
+
+const bigImg = document.getElementById("big-img");
+const arrowRight = document.getElementById("arrow-right");
+const arrowLeft = document.getElementById("arrow-left");
+
+let images = [];      
+let currentIndex = 0; 
+
+
+plusBtn.addEventListener("click", () => {
+  fileInput.click();
+});
+
+
+fileInput.addEventListener("change", (event) => {
+  const files = event.target.files;
+  if (!files.length) return;
+
+  
+  Array.from(files).slice(0, 3).forEach((file, index) => {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      const url = e.target.result;
+
+      if (images.length < 3) {
+        images.push(url); 
+        smallImgs[images.length - 1].style.backgroundImage = `url(${url})`;
+
+        
+        if (images.length === 1) {
+          bigImg.style.backgroundImage = `url(${url})`;
+          currentIndex = 0;
+        }
+      }
+    }
+    reader.readAsDataURL(file);
+  });
+});
+
+
+function showImage(index) {
+  if (images.length > 0) {
+    bigImg.style.backgroundImage = `url(${images[index]})`;
+  }
+}
+
+
+arrowRight.addEventListener("click", () => {
+  if (images.length === 0) return;
+  currentIndex = (currentIndex + 1) % images.length;
+  showImage(currentIndex);
+});
+
+arrowLeft.addEventListener("click", () => {
+  if (images.length === 0) return;
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  showImage(currentIndex);
+});

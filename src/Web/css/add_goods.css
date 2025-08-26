@@ -82,6 +82,12 @@ textarea{
     margin-bottom: 25px;
 }
 
+#colors button{
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
 #colors label{
     margin-bottom: 20px;
 }
@@ -163,6 +169,10 @@ accent-color: #2c2c2c;
     box-sizing: border-box;
     top: 4%;
     left: 30%;
+
+    background-size: contain;
+background-repeat: no-repeat;
+background-position: center;
 }
 
 #product-img button{
@@ -193,6 +203,10 @@ accent-color: #2c2c2c;
     top: 66%;
     left: 38%;
     margin-right: 18px;
+
+    background-size: contain;
+background-repeat: no-repeat;
+background-position: center;
 }
 
 
@@ -205,6 +219,10 @@ accent-color: #2c2c2c;
     gap: 18px;
     top: 66%;
     left: 46%;
+
+    background-size: contain;
+background-repeat: no-repeat;
+background-position: center;
 }
 
 #small-img3{
@@ -215,6 +233,10 @@ accent-color: #2c2c2c;
     gap: 18px;
     top: 66%;
     left: 54%;
+
+    background-size: contain;
+background-repeat: no-repeat;
+background-position: center;
 } 
 
 #plus-img{
