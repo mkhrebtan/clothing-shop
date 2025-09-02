@@ -140,6 +140,13 @@ const smallImgs = [
   document.getElementById("small-img1"),
   document.getElementById("small-img2"),
   document.getElementById("small-img3"),
+  document.getElementById("small-img4"),
+  document.getElementById("small-img5"),
+  document.getElementById("small-img6"),
+  document.getElementById("small-img7"),
+  document.getElementById("small-img8"),
+  document.getElementById("small-img9"),
+  document.getElementById("small-img10"),
 ];
 
 const bigImg = document.getElementById("big-img");
@@ -160,12 +167,12 @@ fileInput.addEventListener("change", (event) => {
   if (!files.length) return;
 
   
-  Array.from(files).slice(0, 3).forEach((file, index) => {
+  Array.from(files).slice(0, 10).forEach((file, index) => {
     const reader = new FileReader();
     reader.onload = function(e) {
       const url = e.target.result;
 
-      if (images.length < 3) {
+      if (images.length < 10) {
         images.push(url); 
         smallImgs[images.length - 1].style.backgroundImage = `url(${url})`;
 

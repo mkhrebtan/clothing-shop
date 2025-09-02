@@ -194,16 +194,16 @@ background-position: center;
 }
 
 
-#small-img1{
+ #small-img1{
     width: 6%;
     height: 9%;
     position: absolute;
     box-sizing: border-box;
     gap: 18px;
     top: 66%;
-    left: 38%;
+    left: 2%;
     margin-right: 18px;
-
+    
     background-size: contain;
 background-repeat: no-repeat;
 background-position: center;
@@ -218,8 +218,8 @@ background-position: center;
     box-sizing: border-box;
     gap: 18px;
     top: 66%;
-    left: 46%;
-
+    left: 10%;
+    
     background-size: contain;
 background-repeat: no-repeat;
 background-position: center;
@@ -232,17 +232,125 @@ background-position: center;
     box-sizing: border-box;
     gap: 18px;
     top: 66%;
-    left: 54%;
+    left: 18%;
+    
+    background-size: contain;
+background-repeat: no-repeat;
+background-position: center;
+}  
+
+#small-img4{
+    width: 6%;
+    height: 9%;
+    position: absolute;
+    box-sizing: border-box;
+    gap: 18px;
+    top: 66%;
+    left: 26%;
+    
 
     background-size: contain;
 background-repeat: no-repeat;
 background-position: center;
-} 
+}  
+
+#small-img5{
+    width: 6%;
+    height: 9%;
+    position: absolute;
+    box-sizing: border-box;
+    gap: 18px;
+    top: 66%;
+    left: 34%;
+    
+
+    background-size: contain;
+background-repeat: no-repeat;
+background-position: center;
+}  
+
+#small-img6{
+    width: 6%;
+    height: 9%;
+    position: absolute;
+    box-sizing: border-box;
+    gap: 18px;
+    top: 66%;
+    left: 42%;
+    
+
+    background-size: contain;
+background-repeat: no-repeat;
+background-position: center;
+}  
+
+#small-img7{
+    width: 6%;
+    height: 9%;
+    position: absolute;
+    box-sizing: border-box;
+    gap: 18px;
+    top: 66%;
+    left: 50%;
+    
+
+    background-size: contain;
+background-repeat: no-repeat;
+background-position: center;
+}  
+
+#small-img8{
+    width: 6%;
+    height: 9%;
+    position: absolute;
+    box-sizing: border-box;
+    gap: 18px;
+    top: 66%;
+    left: 58%;
+    
+
+    background-size: contain;
+background-repeat: no-repeat;
+background-position: center;
+}  
+
+#small-img9{
+    width: 6%;
+    height: 9%;
+    position: absolute;
+    box-sizing: border-box;
+    gap: 18px;
+    top: 66%;
+    left: 66%;
+    
+
+    background-size: contain;
+background-repeat: no-repeat;
+background-position: center;
+}  
+
+#small-img10{
+    width: 6%;
+    height: 9%;
+    position: absolute;
+    box-sizing: border-box;
+    gap: 18px;
+    top: 66%;
+    left: 74%;
+    
+
+    background-size: contain;
+background-repeat: no-repeat;
+background-position: center;
+}  
+
+
+
 
 #plus-img{
     position: absolute;
     top: 68%;
-    left: 62%;
+    left: 83%;
 }
 
 #button-block button{
