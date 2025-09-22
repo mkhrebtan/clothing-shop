@@ -1,0 +1,22 @@
+<section class="client-header">
+  <div class="header-menu">
+    <mat-button-toggle-group name="genderSelection" [hideSingleSelectionIndicator]="true">
+      <mat-button-toggle value="women">Жінки</mat-button-toggle>
+      <mat-button-toggle value="men">Чоловіки</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  <img class="logo-image" ngSrc="/logo.png" alt="Logo" priority height="50" width="50" />
+  <div class="header-right">
+    <div class="product-search">
+      <fa-icon [icon]="faMagnifyingGlass" (click)="onSearchClick()"/>
+      <input type="text" placeholder="Пошук" [formControl]="searchQuery"/>
+    </div>
+    <div class="shopping-cart">
+      <fa-icon [icon]="faBagShopping" />
+      @if (cartItemCount > 0) {
+        <span class="cart-count" animate.enter="cart-count-enter">{{ cartItemCount }}</span>
+      }
+    </div>
+    <fa-icon [icon]="faUser" />
+  </div>
+</section>
