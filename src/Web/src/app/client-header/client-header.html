@@ -1,9 +1,31 @@
 <section class="client-header">
-  <div class="header-menu">
-    <mat-button-toggle-group name="genderSelection" [hideSingleSelectionIndicator]="true">
-      <mat-button-toggle value="women">Жінки</mat-button-toggle>
-      <mat-button-toggle value="men">Чоловіки</mat-button-toggle>
-    </mat-button-toggle-group>
+  <div class="header-left">
+    <div class="header-menu" [class.opened]="this.isMenuOpen()" appClickOutside (appOutsideClick)="closeMenu()">
+      <div class="header-menu-header">
+        <button class="menu-button" [class.opened]="this.isMenuOpen()" (click)="toggleMenu()">
+          <fa-icon [icon]="faBars"/>
+          <span>Меню</span>
+        </button>
+        <div class="gender-toggle">
+          <button [class.selected]="this.selectedGender() === Gender.women" (click)="selectGender(Gender.women)">Жінки</button>
+          <button [class.selected]="this.selectedGender() === Gender.men" (click)="selectGender(Gender.men)">Чоловіки</button>
+        </div>
+      </div>
+      <div class="header-menu-body">
+        @if (isMenuOpen()) {
+          <div class="categories-list">
+            @for (category of categories; track category.id) {
+              <button>{{ category.name }}</button>
+            }
+          </div>
+          <div class="special-offers">
+            <button id="discountsButton">Спеціальні пропозиції</button>
+            <button>Новинки</button>
+            <button>Топ переглядів</button>
+          </div>
+        }
+      </div>
+    </div>
   </div>
   <img class="logo-image" ngSrc="/logo.png" alt="Logo" priority height="50" width="50" />
   <div class="header-right">
