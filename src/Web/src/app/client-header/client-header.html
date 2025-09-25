@@ -34,11 +34,19 @@
       <input type="text" placeholder="Пошук" [formControl]="searchQuery"/>
     </div>
     <div class="shopping-cart">
-      <fa-icon [icon]="faBagShopping" />
+      <button class="icon-button">
+        <fa-icon [icon]="faBagShopping" />
+      </button>
       @if (cartItemCount > 0) {
         <span class="cart-count" animate.enter="cart-count-enter">{{ cartItemCount }}</span>
       }
     </div>
-    <fa-icon [icon]="faUser" />
+    <button class="icon-button" (click)="openAuthDialog()">
+      <fa-icon [icon]="faUser" />
+    </button>
   </div>
 </section>
+
+@if (isAuthDialogOpen()) {
+  <app-auth-dialog (closeDialog)="closeAuthDialog()"></app-auth-dialog>
+}

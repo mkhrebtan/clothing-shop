@@ -1,0 +1,79 @@
+<app-backdrop (backdropClick)="onClose()" />
+<div class="modal-dialog" (click)="$event.stopPropagation()">
+  <div class="modal-header">
+    <div class="form-toggle">
+      <button class="toggle-btn"
+        (click)="isLoginMode.set(true)"
+        [class.selected]="isLoginMode()">Вхід</button>
+      <button class="toggle-btn"
+        (click)="isLoginMode.set(false)"
+        [class.selected]="!isLoginMode()">Реєстрація</button>
+    </div>
+    <button class="icon-button close" (click)="onClose()">
+      <fa-icon [icon]="faXmark" />
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="form-container" [class.active]="isLoginMode()">
+      <form>
+        <div class="form-group">
+          <input type="email" class="form-input" placeholder=" " required>
+          <label class="form-label">Email Address</label>
+        </div>
+        <div class="form-group">
+          <input [type]="showLoginPassword() ? 'text' : 'password'"
+                 class="form-input"
+                 placeholder=" "
+                 [formControl]="loginPassword"
+                 required>
+          <label class="form-label">Password</label>
+          <button class="icon-button pass-eye"
+                  type="button"
+                  (click)="toggleLoginPasswordVisibility()"
+                  [class.disabled]="!loginPassword.value">
+            <fa-icon [icon]="showLoginPassword() ? faEyeSlash : faEye" />
+          </button>
+        </div>
+        <button type="submit" class="submit-btn">Увійти</button>
+      </form>
+    </div>
+
+    <div class="form-container" [class.active]="!isLoginMode()">
+      <form>
+        <div class="form-group">
+          <input type="email" class="form-input" placeholder=" " required>
+          <label class="form-label">Email Address</label>
+        </div>
+        <div class="form-group">
+          <input [type]="showRegisterPassword() ? 'text' : 'password'"
+                 class="form-input"
+                 placeholder=" "
+                 [formControl]="registerPassword"
+                 required>
+          <label class="form-label">Password</label>
+          <button class="icon-button pass-eye"
+                  type="button"
+                  (click)="toggleRegisterPasswordVisibility()"
+                  [class.disabled]="!registerPassword.value">
+            <fa-icon [icon]="showRegisterPassword() ? faEyeSlash : faEye" />
+          </button>
+        </div>
+        <div class="form-group">
+          <input [type]="showConfirmPassword() ? 'text' : 'password'"
+                 class="form-input"
+                 placeholder=" "
+                 [formControl]="confirmPassword"
+                 required>
+          <label class="form-label">Confirm Password</label>
+          <button class="icon-button pass-eye"
+                  type="button"
+                  (click)="toggleConfirmPasswordVisibility()"
+                  [class.disabled]="!confirmPassword.value">
+            <fa-icon [icon]="showConfirmPassword() ? faEyeSlash : faEye" />
+          </button>
+        </div>
+        <button type="submit" class="submit-btn">Реєстрація</button>
+      </form>
+    </div>
+  </div>
+</div>

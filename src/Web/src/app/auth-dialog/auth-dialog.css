@@ -1,0 +1,165 @@
+.modal-dialog {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  max-width: 400px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  animation: modalSlideIn 0.3s ease-out;
+  z-index: var(--modal-z-index);
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateX(50%);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.icon-button.close {
+  font-size: 16px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.icon-button.close:hover {
+  background-color: #d6d6d6;
+}
+
+.modal-body {
+  padding: 25px;
+}
+
+.toggle-btn {
+  font-size: 14px;
+  padding: 5px 10px;
+  position: relative;
+  overflow: hidden;
+  background: none;
+  border: none;
+}
+
+.toggle-btn:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background-color: #000;
+  transition: width 0.3s ease-out, left 0.3s ease-out;
+}
+
+.toggle-btn.selected:before {
+  width: 90%;
+  left: 5%;
+}
+
+.toggle-btn.selected {
+  font-weight: bold;
+}
+
+.form-group {
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.form-input {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #000;
+  box-shadow: 0 0 0 3px rgba(55, 55, 55, 0.1);
+}
+
+.form-label {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: #999;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label {
+  top: -25%;
+  left: 0;
+  font-size: 12px;
+  color: #000;
+  background: transparent;
+  padding: 0 5px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: #252525;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(55, 55, 55, 0.3);
+}
+
+.form-container {
+  display: none;
+}
+
+.form-container.active {
+  display: block;
+}
+
+.pass-eye {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  color: #2b2b2b;
+  transition: all 0.3s ease;
+}
+
+.pass-eye.disabled {
+  color: #a6a6a6;
+  pointer-events: none;
+}

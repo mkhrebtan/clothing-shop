@@ -1,13 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
-import { faBagShopping } from '@fortawesome/free-solid-svg-icons';
+import { faBagShopping, faMagnifyingGlass, faBars } from '@fortawesome/free-solid-svg-icons';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
-import { faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { ClickOutside } from '../shared/directives/click-outside';
 import { Gender } from './enums/gender';
+import { AuthDialog } from '../auth-dialog/auth-dialog';
 
 @Component({
   selector: 'app-client-header',
@@ -16,6 +15,7 @@ import { Gender } from './enums/gender';
     FaIconComponent,
     ReactiveFormsModule,
     ClickOutside,
+    AuthDialog,
   ],
   templateUrl: './client-header.html',
   styleUrl: './client-header.css'
@@ -49,6 +49,7 @@ export class ClientHeader {
   ] as Category[];
   selectedGender = signal<Gender>(Gender.men);
   isMenuOpen = signal(false);
+  isAuthDialogOpen = signal(false);
 
   onSearchClick() {
     if (this.searchQuery.value) {
@@ -66,6 +67,14 @@ export class ClientHeader {
 
   closeMenu() {
     this.isMenuOpen.set(false);
+  }
+
+  openAuthDialog() {
+    this.isAuthDialogOpen.set(true);
+  }
+
+  closeAuthDialog() {
+    this.isAuthDialogOpen.set(false);
   }
 
   get categories() {

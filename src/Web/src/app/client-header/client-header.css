@@ -1,9 +1,18 @@
 :host {
   --icon-size: 20px;
+  --transition-standard: 0.3s ease;
+  --border-standard: 1px solid #ccc;
+  --border-hover: 1px solid #888;
+  --padding-button: 10px 8px;
 }
 
-fa-icon {
-  cursor: pointer;
+.header-menu button,
+.gender-toggle button {
+  background: none;
+  border: none;
+}
+
+.icon-button fa-icon {
   font-size: var(--icon-size);
   padding: 0;
 }
@@ -25,10 +34,10 @@ fa-icon {
 .header-menu {
   display: flex;
   flex-direction: column;
-  border: 1px solid #ccc;
+  border: var(--border-standard);
   border-radius: 5px;
   padding: 10px;
-  transition: border-color 0.3s ease, background-color 0.3s ease;
+  transition: border-color var(--transition-standard), background-color var(--transition-standard);
   position: absolute;
   top: 0;
   left: 0;
@@ -42,17 +51,14 @@ fa-icon {
   gap: 25px;
 }
 
-.header-menu button {
-  cursor: pointer;
-  background: none;
-  border: none;
-  font-size: 15px;
-}
-
 .header-menu-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.header-menu-header button {
+  font-size: 15px;
 }
 
 .header-menu-body {
@@ -73,23 +79,22 @@ fa-icon {
 .categories-list,
 .special-offers {
   gap: 5px;
+  display: flex;
+  flex-direction: column;
 }
 
 .categories-list {
-  display: flex;
-  flex-direction: column;
   align-items: start;
 }
 
 .special-offers {
-  display: flex;
-  flex-direction: column;
   align-items: end;
 }
 
 .categories-list button,
 .special-offers button {
   transition: box-shadow 0.5s ease-out, color 0.5s ease-out;
+  padding: var(--padding-button);
 }
 
 .categories-list button {
@@ -133,6 +138,7 @@ fa-icon {
 }
 
 .menu-button fa-icon {
+  font-size: var(--icon-size);
   transition: transform 0.3s ease;
 }
 
