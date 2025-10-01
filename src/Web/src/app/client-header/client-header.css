@@ -12,9 +12,8 @@
   border: none;
 }
 
-.icon-button fa-icon {
+fa-icon {
   font-size: var(--icon-size);
-  padding: 0;
 }
 
 .client-header {
@@ -218,7 +217,7 @@
 
 .cart-count {
   position: absolute;
-  bottom: 2px;
+  bottom: 0;
   left: 2px;
   right: 2px;
   transform: translateY(100%);
