@@ -1,0 +1,98 @@
+.product-card {
+  cursor: pointer;
+  padding: 10px;
+  margin-bottom: 10px;
+  transition: box-shadow .2s;
+  border-radius: 8px;
+}
+
+.product-card:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.product-image {
+  position: relative;
+  aspect-ratio: 4 / 5;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.color-options {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 5px 0;
+}
+
+.color-swatch {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid #e5e7eb;
+  transition: all 0.2s ease;
+  position: relative;
+  flex-shrink: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.color-swatch:hover,
+.color-swatch.active {
+  border-color: #3b82f6;
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+}
+
+.color-swatch[style*="ffffff"] {
+  border-color: #d1d5db;
+}
+
+.color-swatch[style*="ffffff"]:hover,
+.color-swatch[style*="ffffff"].active {
+  border-color: #3b82f6;
+}
+
+.more-colors {
+  font-size: 10px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.wishlist-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 31px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wishlist-button:hover {
+  background: white;
+  transform: scale(1.1);
+}
+
+.wishlist-button:hover,
+.wishlist-button.active {
+  color: #ef4444;
+}
+
+.icon-button fa-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

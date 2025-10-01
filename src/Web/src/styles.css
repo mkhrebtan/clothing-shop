@@ -9,12 +9,11 @@ body {
   font-optical-sizing: auto;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
 :root {
   --backdrop-z-index: 10;
   --modal-z-index: calc(var(--backdrop-z-index) + 1);
+
+  --product-card-width: 250px;
 }
 
 button {
