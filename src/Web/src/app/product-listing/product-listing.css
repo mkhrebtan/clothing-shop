@@ -1,3 +1,8 @@
+:host {
+  --color-swatch-size: 13px;
+  --outline-padding: 3px;
+}
+
 .product-card {
   cursor: pointer;
   padding: 10px;
@@ -15,6 +20,10 @@
   aspect-ratio: 4 / 5;
 }
 
+.product-image img {
+  object-fit: cover;
+}
+
 .product-info {
   display: flex;
   flex-direction: column;
@@ -27,12 +36,14 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  margin: 5px 0;
+  margin-top: 5px;
+  margin-bottom: 8px;
+  margin-left: var(--outline-padding);
 }
 
 .color-swatch {
-  width: 15px;
-  height: 15px;
+  width: var(--color-swatch-size);
+  height: var(--color-swatch-size);
   border-radius: 50%;
   cursor: pointer;
   border: 1px solid #e5e7eb;
@@ -42,11 +53,29 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.color-swatch::before {
+  content: '';
+  position: absolute;
+  top: calc(-1 * var(--outline-padding));
+  left: calc(-1 * var(--outline-padding));
+  right: calc(-1 * var(--outline-padding));
+  bottom: calc(-1 * var(--outline-padding));
+  border: 1px solid transparent;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  pointer-events: none;
+}
+
+/*.color-swatch:hover::before,*/
+.color-swatch.active::before {
+  border-color: #888888;
+}
+
 .color-swatch:hover,
 .color-swatch.active {
-  border-color: #3b82f6;
-  transform: scale(1.1);
-  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+  border-color: #e5e7eb;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.15);
 }
 
 .color-swatch[style*="ffffff"] {
@@ -63,6 +92,37 @@
   font-weight: 500;
   white-space: nowrap;
   transition: color 0.2s ease;
+  height: var(--color-swatch-size);
+  line-height: var(--color-swatch-size);
+}
+
+.product-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.price-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.product-price.sale {
+  text-decoration: line-through;
+  color: #777777;
+}
+
+.product-price.sale .price-amount {
+  font-weight: 400;
+}
+
+.product-sale-price {
+  color: #ef4444;
+}
+
+.price-amount {
+  font-weight: 600;
 }
 
 .wishlist-button {
@@ -73,7 +133,7 @@
   height: 31px;
   background: rgba(255, 255, 255, 0.9);
   border-radius: 50%;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
@@ -82,7 +142,6 @@
 
 .wishlist-button:hover {
   background: white;
-  transform: scale(1.1);
 }
 
 .wishlist-button:hover,
@@ -90,9 +149,19 @@
   color: #ef4444;
 }
 
+.wishlist-button.active {
+  animation: like 0.3s 1;
+}
+
 .icon-button fa-icon {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+@-webkit-keyframes like {
+  0%   { transform: scale(1); }
+  90%   { transform: scale(1.2); }
+  100% { transform: scale(1.1); }
 }
