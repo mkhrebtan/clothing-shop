@@ -1,20 +1,44 @@
-<div class="product-card">
+<div class="product-card" (mouseover)="onMouseOver()" (mouseout)="onMouseOut()">
   <div class="product-image">
-    <img ngSrc="https://images.unsplash.com/photo-1588099768531-a72d4a198538?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-         alt="Product Image"
+    <img ngSrc="{{ imgSrc() }}"
+         alt="{{ product.images[0].alt }}"
          fill>
-    <button class="icon-button wishlist-button" aria-label="Add to Wishlist">
-      <fa-icon [icon]="faHeart"/>
+    <button class="icon-button wishlist-button" aria-label="Add to Wishlist"
+            [class.active]="isAddedToWishlist"
+            (click)="toggleWishlist()">
+      <fa-icon [icon]="isAddedToWishlist ? faSolidHeart : faHeart" />
     </button>
   </div>
   <div class="product-info">
     <div class="color-options">
-      <div class="color-swatch active" title="Black" style="background-color: #000000;"></div>
-      <div class="color-swatch" title="Red" style="background-color: #dc2626;"></div>
-      <div class="color-swatch" title="Navy" style="background-color: #1e3a8a;"></div>
-      <span class="more-colors">+2</span>
+      @for (color of product.colorOptions.slice(0, 3); track color.id) {
+        <div class="color-swatch"
+             [title]="color.name"
+             [style.background-color]="color.colorHex"
+             [class.active]="selectedColorId === color.id"
+             (click)="selectColor(color.id)"></div>
+      }
+      @if (product.colorOptions.length > 3) {
+        <span class="more-colors">+{{ product.colorOptions.length - 3 }}</span>
+      }
+<!--      <div class="color-swatch active" title="Black" style="background-color: #000000;"></div>-->
+<!--      <div class="color-swatch" title="Red" style="background-color: #dc2626;"></div>-->
+<!--      <div class="color-swatch" title="Navy" style="background-color: #1e3a8a;"></div>-->
+<!--      <span class="more-colors">+2</span>-->
     </div>
-    <span class="product-title">Кросівки високі Nike Air Jordan 3 </span>
-    <span class="product-price"><b style="font-weight: 600">1999</b> грн</span>
+    <span class="product-title">{{ product.title }}</span>
+    <div class="price-container">
+      @if (product.isOnSale)
+      {
+        <span class="product-sale-price"
+              [class.sale]="product.isOnSale">
+          <span class="price-amount">{{ product.salePrice }}</span> грн
+        </span>
+      }
+      <span class="product-price"
+            [class.sale]="product.isOnSale">
+        <span class="price-amount">{{ product.price }}</span> грн
+      </span>
+    </div>
   </div>
 </div>
