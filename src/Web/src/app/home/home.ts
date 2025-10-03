@@ -40,6 +40,7 @@ export class Home {
           colorHex: '#1e3a8a'
         },
       ],
+      sizes : ['S', 'M', 'L', 'XL'],
     },
     {
       id: 2,
@@ -66,6 +67,7 @@ export class Home {
           colorHex: '#dc2626'
         },
       ],
+      sizes : ['S', 'M', 'L', 'XL'],
     },
     {
       id: 3,
@@ -90,6 +92,7 @@ export class Home {
         { id: 5, name: 'Green', colorHex: '#00FF00' },
         { id: 6, name: 'Navy', colorHex: '#1e3a8a' }
       ],
+      sizes : ['S', 'M', 'L', 'XL'],
     },
     {
       id: 4,
@@ -112,6 +115,7 @@ export class Home {
         { id: 3, name: 'Light Pink', colorHex: '#FFB6C1' },
         { id: 4, name: 'Black', colorHex: '#000000' },
       ],
+      sizes : ['S', 'M', 'L', 'XL'],
     },
     {
       id: 5,
@@ -136,6 +140,7 @@ export class Home {
         { id: 5, name: 'Black', colorHex: '#000000' },
         { id: 6, name: 'Olive', colorHex: '#808000' },
       ],
+      sizes : ['S', 'M', 'L', 'XL'],
     },
     {
       id: 6,
@@ -161,6 +166,7 @@ export class Home {
         { id: 7, name: 'White', colorHex: '#FFFFFF' },
         { id: 8, name: 'Grey', colorHex: '#808080' },
       ],
+      sizes : ['S', 'M', 'L', 'XL'],
     },
     {
       id: 7,
@@ -183,6 +189,7 @@ export class Home {
         { id: 5, name: 'Pink', colorHex: '#FFC0CB' },
         { id: 6, name: 'White', colorHex: '#FFFFFF' },
       ],
+      sizes : ['S', 'M', 'L', 'XL'],
     },
     {
       id: 8,
@@ -206,6 +213,7 @@ export class Home {
         { id: 6, name: 'Blue', colorHex: '#0000FF' },
         { id: 7, name: 'Grey', colorHex: '#808080' },
       ],
+      sizes : ['S', 'M', 'L', 'XL'],
     },
   ];
 }

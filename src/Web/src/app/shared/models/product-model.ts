@@ -8,6 +8,7 @@ export interface ProductModel {
   salePrice?: number;
   images: ProductImage[];
   colorOptions: ColorOption[];
+  sizes: string[];
 }
 
 interface ProductImage {

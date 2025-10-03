@@ -8,6 +8,19 @@
             (click)="toggleWishlist()">
       <fa-icon [icon]="isAddedToWishlist ? faSolidHeart : faHeart" />
     </button>
+    <div class="add-to-cart-container">
+      <select class="size-selector" aria-label="Select Size" [formControl]="selectedSize">
+        <option value='' selected disabled hidden>Розмір</option>
+        @for (size of product.sizes; track size) {
+          <option value="{{ size }}">{{ size }}</option>
+        }
+      </select>
+      <button class="add-to-cart-button" aria-label="Add to Cart"
+              [class.active]="selectedSize.value"
+              (click)="addToCart()">
+        <fa-icon [icon]="faShoppingCart" />
+      </button>
+    </div>
   </div>
   <div class="product-info">
     <div class="color-options">
@@ -21,10 +34,6 @@
       @if (product.colorOptions.length > 3) {
         <span class="more-colors">+{{ product.colorOptions.length - 3 }}</span>
       }
-<!--      <div class="color-swatch active" title="Black" style="background-color: #000000;"></div>-->
-<!--      <div class="color-swatch" title="Red" style="background-color: #dc2626;"></div>-->
-<!--      <div class="color-swatch" title="Navy" style="background-color: #1e3a8a;"></div>-->
-<!--      <span class="more-colors">+2</span>-->
     </div>
     <span class="product-title">{{ product.title }}</span>
     <div class="price-container">
