@@ -1,26 +1,21 @@
-<div class="product-card" (mouseover)="onMouseOver()" (mouseout)="onMouseOut()">
+<div class="product-card"
+     (mouseover)="onMouseOver()"
+     (mouseout)="onMouseOut()">
   <div class="product-image">
-    <img ngSrc="{{ imgSrc() }}"
-         alt="{{ product.images[0].alt }}"
-         fill>
+    @if (!isHovered()) {
+      <img ngSrc="{{ product.images[0].url }}"
+           alt="{{ product.images[0].alt }}"
+           fill animate.leave="image-leave-animation">
+    } @else {
+      <img ngSrc="{{ product.images[1].url ?? product.images[0].url }}"
+           alt="{{ product.images[1].alt ?? product.images[0].alt }}"
+           fill animate.leave="image-leave-animation">
+    }
     <button class="icon-button wishlist-button" aria-label="Add to Wishlist"
             [class.active]="isAddedToWishlist"
             (click)="toggleWishlist()">
       <fa-icon [icon]="isAddedToWishlist ? faSolidHeart : faHeart" />
     </button>
-    <div class="add-to-cart-container">
-      <select class="size-selector" aria-label="Select Size" [formControl]="selectedSize">
-        <option value='' selected disabled hidden>Розмір</option>
-        @for (size of product.sizes; track size) {
-          <option value="{{ size }}">{{ size }}</option>
-        }
-      </select>
-      <button class="add-to-cart-button" aria-label="Add to Cart"
-              [class.active]="selectedSize.value"
-              (click)="addToCart()">
-        <fa-icon [icon]="faShoppingCart" />
-      </button>
-    </div>
   </div>
   <div class="product-info">
     <div class="color-options">
@@ -49,5 +44,18 @@
         <span class="price-amount">{{ product.price }}</span> грн
       </span>
     </div>
+  </div>
+  <div class="add-to-cart-container">
+    <select class="size-selector" aria-label="Select Size" [formControl]="selectedSize">
+      <option value='' selected disabled hidden>Розмір</option>
+      @for (size of product.sizes; track size) {
+        <option value="{{ size }}">{{ size }}</option>
+      }
+    </select>
+    <button class="add-to-cart-button" aria-label="Add to Cart"
+            [class.active]="selectedSize.value"
+            (click)="addToCart()">
+      <fa-icon [icon]="faShoppingCart" />
+    </button>
   </div>
 </div>

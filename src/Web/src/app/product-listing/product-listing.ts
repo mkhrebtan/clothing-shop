@@ -25,15 +25,11 @@ export class ProductListing implements OnInit {
   isAddedToWishlist = false;
   selectedColorId = 0;
   selectedSize = new FormControl('');
-  imgSrc = signal('');
+  isHovered = signal(false);
 
   ngOnInit() {
     if (this.product?.colorOptions?.length > 0) {
       this.selectedColorId = this.product.colorOptions[0].id;
-    }
-
-    if (this.product?.images?.length > 0) {
-      this.imgSrc.set(this.product.images[0].url);
     }
   }
 
@@ -46,15 +42,11 @@ export class ProductListing implements OnInit {
   }
 
   onMouseOver() {
-    if (this.product?.images?.length > 1) {
-      this.imgSrc.set(this.product.images[1].url);
-    }
+    this.isHovered.set(true);
   }
 
   onMouseOut() {
-    if (this.product?.images?.length > 0) {
-      this.imgSrc.set(this.product.images[0].url);
-    }
+    this.isHovered.set(false);
   }
 
   addToCart() {
