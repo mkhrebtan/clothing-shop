@@ -1,0 +1,35 @@
+.wishlist-button {
+  width: var(--wishlist-button-size);
+  height: var(--wishlist-button-size);
+  transition: all var(--default-transition-duration) ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wishlist-button:hover,
+.wishlist-button.active {
+  color: #ef4444;
+}
+
+.wishlist-button.active {
+  animation: like var(--default-transition-duration) 1;
+}
+
+.icon-button fa-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@-webkit-keyframes like {
+  0%   { transform: scale(1); }
+  90%   { transform: scale(1.2); }
+  100% { transform: scale(1.1); }
+}
+
+

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProductListing } from './product-listing';
+import { ProductColorSwatch } from './product-color-swatch';
 
-describe('ProductListing', () => {
-  let component: ProductListing;
-  let fixture: ComponentFixture<ProductListing>;
+describe('ProductColorSwatch', () => {
+  let component: ProductColorSwatch;
+  let fixture: ComponentFixture<ProductColorSwatch>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ProductListing]
+      imports: [ProductColorSwatch]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ProductListing);
+    fixture = TestBed.createComponent(ProductColorSwatch);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

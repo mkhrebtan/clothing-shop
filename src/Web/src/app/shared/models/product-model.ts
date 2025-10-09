@@ -1,4 +1,5 @@
-import { ColorOption } from './color-option';
+import { ProductColor } from './product-color';
+import { ProductImage } from './product-image';
 
 export interface ProductModel {
   id: number;
@@ -7,12 +8,6 @@ export interface ProductModel {
   isOnSale: boolean;
   salePrice?: number;
   images: ProductImage[];
-  colorOptions: ColorOption[];
+  colorOptions: ProductColor[];
   sizes: string[];
-}
-
-interface ProductImage {
-  url: string;
-  alt: string;
-  order: number;
 }

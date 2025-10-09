@@ -1,22 +1,26 @@
 import {Component, Input, OnInit, signal} from '@angular/core';
-import { NgOptimizedImage } from '@angular/common';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import { faHeart as faSolidHeart, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-import { ProductModel } from '../shared/models/product-model';
+import { ProductModel } from '../../../shared/models/product-model';
 import {FormControl, ReactiveFormsModule} from '@angular/forms';
+import {ProductCardImage} from './product-card-image/product-card-image';
+import {ProductColorSwatch} from '../product-color-swatch/product-color-swatch';
+import {WishlistButton} from '../wishlist-button/wishlist-button';
 
 @Component({
   selector: 'app-product-listing',
   imports: [
-    NgOptimizedImage,
     FaIconComponent,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ProductCardImage,
+    ProductColorSwatch,
+    WishlistButton
   ],
-  templateUrl: './product-listing.html',
-  styleUrl: './product-listing.css'
+  templateUrl: './product-card.html',
+  styleUrl: './product-card.css'
 })
-export class ProductListing implements OnInit {
+export class ProductCard implements OnInit {
   @Input() product!: ProductModel;
 
   faHeart = faHeart;
@@ -25,7 +29,6 @@ export class ProductListing implements OnInit {
   isAddedToWishlist = false;
   selectedColorId = 0;
   selectedSize = new FormControl('');
-  isHovered = signal(false);
 
   ngOnInit() {
     if (this.product?.colorOptions?.length > 0) {
@@ -37,16 +40,8 @@ export class ProductListing implements OnInit {
     this.isAddedToWishlist = !this.isAddedToWishlist;
   }
 
-  selectColor(colorId: number) {
-    this.selectedColorId = colorId;
-  }
-
-  onMouseOver() {
-    this.isHovered.set(true);
-  }
-
-  onMouseOut() {
-    this.isHovered.set(false);
+  onColorChange(color: { id: number }) {
+    this.selectedColorId = color.id;
   }
 
   addToCart() {

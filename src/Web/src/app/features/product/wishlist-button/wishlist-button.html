@@ -1,0 +1,5 @@
+<button class="icon-button wishlist-button" aria-label="Add to Wishlist"
+        [class.active]="isAddedToWishlist"
+        (click)="toggleWishlist()">
+  <fa-icon [icon]="isAddedToWishlist ? faSolidHeart : faHeart" />
+</button>

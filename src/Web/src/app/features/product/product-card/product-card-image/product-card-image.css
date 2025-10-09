@@ -1,0 +1,12 @@
+img {
+  object-fit: cover;
+}
+
+.image-leave-animation {
+  animation: fade-out var(--default-transition-duration) forwards;
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}

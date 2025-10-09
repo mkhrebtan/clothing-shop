@@ -1,0 +1,12 @@
+<div class="product-card-image" (mouseover)="onMouseOver()" (mouseout)="onMouseOut()">
+  @if (isHovered())
+  {
+    <img ngSrc="{{ secondaryImage.url }}"
+         alt="{{ secondaryImage.alt }}"
+         fill animate.leave="image-leave-animation">
+  } @else {
+    <img ngSrc="{{ mainImage.url }}"
+         alt="{{ mainImage.alt }}"
+         fill animate.leave="image-leave-animation">
+  }
+</div>
