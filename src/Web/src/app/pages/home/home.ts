@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import { ClientHeader } from '../client-header/client-header';
-import { ProductListing } from '../product-listing/product-listing';
-import { ProductModel } from '../shared/models/product-model';
+import { ClientHeader } from '../../layout/client-header/client-header';
+import { ProductCard } from '../../features/product/product-card/product-card';
+import { ProductModel } from '../../shared/models/product-model';
 
 
 @Component({
   selector: 'app-home',
   imports: [
     ClientHeader,
-    ProductListing,
+    ProductCard,
   ],
   templateUrl: './home.html',
   styleUrl: './home.css'

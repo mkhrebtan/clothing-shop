@@ -4,9 +4,9 @@ import { faBagShopping, faMagnifyingGlass, faBars } from '@fortawesome/free-soli
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { ClickOutside } from '../shared/directives/click-outside';
+import { ClickOutside } from '../../shared/directives/click-outside';
 import { Gender } from './enums/gender';
-import { AuthDialog } from '../auth-dialog/auth-dialog';
+import { AuthDialog } from '../../features/auth/auth-dialog/auth-dialog';
 
 @Component({
   selector: 'app-client-header',

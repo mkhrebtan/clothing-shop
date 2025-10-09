@@ -1,5 +1,5 @@
 import {Component, Output, EventEmitter, signal} from '@angular/core';
-import { Backdrop } from '../shared/components/backdrop/backdrop';
+import { Backdrop } from '../../../shared/components/backdrop/backdrop';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-regular-svg-icons';
