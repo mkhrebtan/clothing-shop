@@ -1,0 +1,4 @@
+<div class="product-search">
+  <fa-icon [icon]="faMagnifyingGlass" (click)="onSearchClick()"/>
+  <input type="text" placeholder="Пошук" [formControl]="searchQuery" (keydown.enter)="onEnterSearchClick($event)"/>
+</div>

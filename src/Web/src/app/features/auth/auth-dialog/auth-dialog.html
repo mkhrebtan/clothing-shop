@@ -1,20 +1,13 @@
 <app-backdrop (backdropClick)="onClose()" />
 <div class="modal-dialog" (click)="$event.stopPropagation()">
   <div class="modal-header">
-    <div class="form-toggle">
-      <button class="toggle-btn"
-        (click)="isLoginMode.set(true)"
-        [class.selected]="isLoginMode()">Вхід</button>
-      <button class="toggle-btn"
-        (click)="isLoginMode.set(false)"
-        [class.selected]="!isLoginMode()">Реєстрація</button>
-    </div>
+    <app-toggle-buttons [options]="authOptions" [(value)]="selectedOption" />
     <button class="icon-button close" (click)="onClose()">
       <fa-icon [icon]="faXmark" />
     </button>
   </div>
   <div class="modal-body">
-    <div class="form-container" [class.active]="isLoginMode()">
+    <div class="form-container" [class.active]="selectedOption() === AuthOption.LOGIN">
       <form>
         <div class="form-group">
           <input type="email" class="form-input" placeholder=" " required>
@@ -57,7 +50,7 @@
       </form>
     </div>
 
-    <div class="form-container" [class.active]="!isLoginMode()">
+    <div class="form-container" [class.active]="selectedOption() === AuthOption.REGISTER">
       <form>
         <div class="form-group">
           <input type="email" class="form-input" placeholder=" " required>

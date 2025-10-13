@@ -1,0 +1,128 @@
+:host {
+  --header-toggle-button-font-size: 15px;
+}
+
+.header-menu {
+  display: flex;
+  flex-direction: column;
+  border: var(--border-standard);
+  border-radius: 5px;
+  padding: 10px;
+  transition: border-color var(--transition-standard), background-color var(--transition-standard);
+  background-color: var(--mat-sys-surface);
+}
+
+.header-menu.opened {
+  border-color: #888;
+  background-color: #ffffff;
+  gap: 25px;
+}
+
+.header-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-menu-header button {
+  font-size: 15px;
+}
+
+.menu-button {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 2px 10px 2px 0;
+}
+
+.menu-button fa-icon {
+  font-size: var(--icon-size);
+  transition: transform 0.3s ease;
+}
+
+.menu-button.opened fa-icon {
+  transform: rotate(90deg);
+}
+
+.menu-button span {
+  transition: opacity 0.3s ease;
+}
+
+.menu-button.opened span {
+  opacity: 0;
+}
+
+.header-menu-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 5px;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-standard), opacity var(--transition-standard);
+}
+
+.header-menu.opened .header-menu-body {
+  max-height: 80vh;
+  opacity: 1;
+}
+
+.categories-list,
+.special-offers {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.categories-list {
+  align-items: start;
+}
+
+.special-offers {
+  align-items: end;
+}
+
+.categories-list button,
+.special-offers button {
+  background: none;
+  border: none;
+  transition: box-shadow 0.5s ease-out, color 0.5s ease-out;
+  padding: var(--padding-button);
+}
+
+.categories-list button {
+  padding: 10px 8px 10px 8px;
+  border-left: 1px solid black;
+}
+
+.special-offers button {
+  padding: 10px 8px 10px 8px;
+  border-right: 1px solid black;
+}
+
+.categories-list button:hover,
+.categories-list button:focus {
+  box-shadow: inset 24em 0 0 0 black;
+  color: white;
+}
+
+.special-offers button:hover,
+.special-offers button:focus {
+  box-shadow: inset -24em 0 0 0 black;
+  color: white;
+}
+
+#discountsButton {
+  color: red;
+  border-color: red;
+}
+
+#discountsButton:hover,
+#discountsButton:focus {
+  box-shadow: inset -24em 0 0 0 red;
+  color: white;
+}
+
+app-toggle-buttons button {
+  font-size: 16px;
+}

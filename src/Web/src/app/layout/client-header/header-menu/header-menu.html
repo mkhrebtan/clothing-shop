@@ -1,1 +1,23 @@
-<p>header-menu works!</p>
+<div class="header-menu" [class.opened]="this.isMenuOpen()" appClickOutside (appOutsideClick)="closeMenu()">
+  <div class="header-menu-header">
+    <button class="icon-button menu-button" [class.opened]="this.isMenuOpen()" (click)="toggleMenu()">
+      <fa-icon [icon]="faBars"/>
+      <span>Меню</span>
+    </button>
+    <app-toggle-buttons [options]="genderOptions" [(value)]="selectedGender"/>
+  </div>
+  <div class="header-menu-body">
+    @if (isMenuOpen()) {
+      <div class="categories-list">
+        @for (category of categories; track category.id) {
+          <button>{{ category.name }}</button>
+        }
+      </div>
+      <div class="special-offers">
+        <button id="discountsButton">Спеціальні пропозиції</button>
+        <button>Новинки</button>
+        <button>Топ переглядів</button>
+      </div>
+    }
+  </div>
+</div>

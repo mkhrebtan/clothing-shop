@@ -54,35 +54,6 @@
   padding: 25px;
 }
 
-.toggle-btn {
-  font-size: 14px;
-  padding: 5px 10px;
-  position: relative;
-  overflow: hidden;
-  background: none;
-  border: none;
-}
-
-.toggle-btn:before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 1px;
-  background-color: #000;
-  transition: width 0.3s ease-out, left 0.3s ease-out;
-}
-
-.toggle-btn.selected:before {
-  width: 90%;
-  left: 5%;
-}
-
-.toggle-btn.selected {
-  font-weight: bold;
-}
-
 .form-group {
   margin-bottom: 25px;
   position: relative;

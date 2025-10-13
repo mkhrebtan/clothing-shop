@@ -1,0 +1,18 @@
+<div class="header-actions">
+  <app-header-actions-search />
+  <div class="shopping-cart">
+    <button class="icon-button">
+      <fa-icon [icon]="faBagShopping" />
+    </button>
+    @if (cartItemCount > 0) {
+      <span class="cart-count" animate.enter="cart-count-enter">{{ cartItemCount }}</span>
+    }
+  </div>
+  <button class="icon-button" (click)="openAuthDialog()">
+    <fa-icon [icon]="faUser" />
+  </button>
+</div>
+
+@if (isAuthDialogOpen()) {
+  <app-auth-dialog (closeDialog)="closeAuthDialog()"></app-auth-dialog>
+}

@@ -1,52 +1,9 @@
 <section class="client-header">
   <div class="header-left">
-    <div class="header-menu" [class.opened]="this.isMenuOpen()" appClickOutside (appOutsideClick)="closeMenu()">
-      <div class="header-menu-header">
-        <button class="menu-button" [class.opened]="this.isMenuOpen()" (click)="toggleMenu()">
-          <fa-icon [icon]="faBars"/>
-          <span>Меню</span>
-        </button>
-        <div class="gender-toggle">
-          <button [class.selected]="this.selectedGender() === Gender.women" (click)="selectGender(Gender.women)">Жінки</button>
-          <button [class.selected]="this.selectedGender() === Gender.men" (click)="selectGender(Gender.men)">Чоловіки</button>
-        </div>
-      </div>
-      <div class="header-menu-body">
-        @if (isMenuOpen()) {
-          <div class="categories-list">
-            @for (category of categories; track category.id) {
-              <button>{{ category.name }}</button>
-            }
-          </div>
-          <div class="special-offers">
-            <button id="discountsButton">Спеціальні пропозиції</button>
-            <button>Новинки</button>
-            <button>Топ переглядів</button>
-          </div>
-        }
-      </div>
-    </div>
+    <app-header-menu />
   </div>
   <img class="logo-image" ngSrc="/logo.png" alt="Logo" priority height="50" width="50" />
   <div class="header-right">
-    <div class="product-search">
-      <fa-icon [icon]="faMagnifyingGlass" (click)="onSearchClick()"/>
-      <input type="text" placeholder="Пошук" [formControl]="searchQuery"/>
-    </div>
-    <div class="shopping-cart">
-      <button class="icon-button">
-        <fa-icon [icon]="faBagShopping" />
-      </button>
-      @if (cartItemCount > 0) {
-        <span class="cart-count" animate.enter="cart-count-enter">{{ cartItemCount }}</span>
-      }
-    </div>
-    <button class="icon-button" (click)="openAuthDialog()">
-      <fa-icon [icon]="faUser" />
-    </button>
+    <app-header-actions />
   </div>
 </section>
-
-@if (isAuthDialogOpen()) {
-  <app-auth-dialog (closeDialog)="closeAuthDialog()"></app-auth-dialog>
-}
