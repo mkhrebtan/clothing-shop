@@ -1,6 +1,6 @@
 import {Component, Input, signal} from '@angular/core';
 import {NgOptimizedImage} from '@angular/common';
-import {ProductImage} from '../../../../shared/models/product-image';
+import {ProductImage} from '../../../shared/models/product-image';
 
 @Component({
   selector: 'app-product-card-image',
