@@ -1,12 +1,13 @@
-import {Component, Input, OnInit, signal} from '@angular/core';
+import { Component, Input, OnInit, signal } from '@angular/core';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
-import { faHeart } from '@fortawesome/free-regular-svg-icons';
-import { faHeart as faSolidHeart, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { ProductModel } from '../../../shared/models/product-model';
-import {FormControl, ReactiveFormsModule} from '@angular/forms';
-import {ProductCardImage} from './product-card-image/product-card-image';
-import {ProductColorSwatch} from '../product-color-swatch/product-color-swatch';
-import {WishlistButton} from '../wishlist-button/wishlist-button';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { ProductCardImage } from '../product-card-image/product-card-image';
+import { ProductColorSwatch } from '../product-color-swatch/product-color-swatch';
+import { WishlistButton } from '../wishlist-button/wishlist-button';
+import { ProductCardSizeSelector } from '../product-card-size-selector/product-card-size-selector';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-product-listing',
@@ -15,20 +16,18 @@ import {WishlistButton} from '../wishlist-button/wishlist-button';
     ReactiveFormsModule,
     ProductCardImage,
     ProductColorSwatch,
-    WishlistButton
+    WishlistButton,
   ],
   templateUrl: './product-card.html',
-  styleUrl: './product-card.css'
+  styleUrl: './product-card.css',
 })
 export class ProductCard implements OnInit {
   @Input() product!: ProductModel;
-
-  faHeart = faHeart;
-  faSolidHeart = faSolidHeart;
-  faShoppingCart = faShoppingCart;
-  isAddedToWishlist = false;
+  protected readonly faShoppingCart = faShoppingCart;
+  isAddedToWishlist = signal(false);
   selectedColorId = 0;
-  selectedSize = new FormControl('');
+  isSizeSelectorOpened = signal(false);
+  selectedSize = signal('');
 
   ngOnInit() {
     if (this.product?.colorOptions?.length > 0) {
@@ -36,15 +35,21 @@ export class ProductCard implements OnInit {
     }
   }
 
-  toggleWishlist() {
-    this.isAddedToWishlist = !this.isAddedToWishlist;
-  }
-
   onColorChange(color: { id: number }) {
     this.selectedColorId = color.id;
   }
 
   addToCart() {
-    alert(`Added to cart: ${this.product.title}, Size: ${this.selectedSize.value}`);
+    alert(`Added to cart: ${this.product.title}, Size: ${this.selectedSize()}`);
   }
+
+  toggleSizeSelector() {
+    this.isSizeSelectorOpened.update((value) => !value);
+  }
+
+  selectSize(size: string) {
+    this.selectedSize.set(size);
+  }
+
+  protected readonly faChevronDown = faChevronDown;
 }

@@ -1,7 +1,7 @@
 <div class="product-card">
   <div class="product-image">
     <app-product-card-image [mainImage]="product.images[0]" [secondaryImage]="product.images[1]"/>
-    <app-product-card-wishlist-btn [productId]="product.id" />
+    <app-product-card-wishlist-btn [productId]="product.id" [(isAddedToWishlist)]="isAddedToWishlist"/>
   </div>
   <div class="product-info">
     <div class="color-options">
@@ -29,14 +29,29 @@
     </div>
   </div>
   <div class="add-to-cart-container">
-    <select class="size-selector" aria-label="Select Size" [formControl]="selectedSize">
-      <option value='' selected disabled hidden>Розмір</option>
-      @for (size of product.sizes; track size) {
-        <option value="{{ size }}">{{ size }}</option>
-      }
-    </select>
+<!--    <select class="size-selector" aria-label="Select Size" [formControl]="selectedSize">-->
+<!--      <option value='' selected disabled hidden>Розмір</option>-->
+<!--      @for (size of product.sizes; track size) {-->
+<!--        <option value="{{ size }}">{{ size }}</option>-->
+<!--      }-->
+<!--    </select>-->
+    <div class="size-selector" [class.opened]="isSizeSelectorOpened()" (click)="toggleSizeSelector()">
+      <div class="size-selector-body">
+        @for (size of product.sizes; track size) {
+          <button class="size-button" (click)="selectSize(size)" [class.selected]="size === selectedSize()">{{ size }}</button>
+        }
+      </div>
+      <div class="size-selector-header">
+        @if (selectedSize()) {
+          <span class="size-selector-selected-size">{{ selectedSize() }}</span>
+        } @else {
+          <span class="size-selector-placeholder" style="pointer-events: none">Розмір</span>
+        }
+        <fa-icon [icon]="faChevronDown" />
+      </div>
+    </div>
     <button class="add-to-cart-button" aria-label="Add to Cart"
-            [class.active]="selectedSize.value"
+            [class.active]="selectedSize()"
             (click)="addToCart()">
       <fa-icon [icon]="faShoppingCart" />
     </button>
